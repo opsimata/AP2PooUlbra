@@ -1,4 +1,6 @@
-﻿using BankAPII.Domain.Entities;
+﻿using BankAPII.Data.Repositories;
+using BankAPII.Domain.Entities;
+using Data;
 
 namespace BankAPII
 {
@@ -6,12 +8,14 @@ namespace BankAPII
     {
         static void Main(string[] args)
         {
-            var db = new DataContext();
-            var clientRepository = new ClientRepository(db);
-            Client client = new Client();
-            var loop = 1;
             // Criação de clientes
             #region
+            var db = new DataContext();
+            var clientRepository = new ClientRepository(db);
+
+            Client client = new Client();
+
+            var loop = 1;
             Console.WriteLine("\nCreate a client?\nType '1' for yes.\nType '2' for no.");
             Console.Write("Type your choice: ");
             var choice = Convert.ToInt32(Console.ReadLine());
@@ -23,7 +27,7 @@ namespace BankAPII
                     client.Id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Type the client Name: ");
                     client.Name = Console.ReadLine();
-                    clientRepository.Save(client);
+                    // clientRepository.Save(client);
                     Console.WriteLine();
                     Console.WriteLine("Create another client?\nType '1' for yes.\nType '2' for no.");
                     Console.Write("Type your choice: ");
