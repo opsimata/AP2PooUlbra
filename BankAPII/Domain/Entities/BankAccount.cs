@@ -7,8 +7,11 @@ namespace BankAPII.Domain.Entities
 {
     public class BankAccount
     {
-        // private Client Holder { get; set; }
+        public int Id { get; set; }
+        public int AgencyNumber { get; set; }
+        public string AccountNumber { get; set; }
         public double Balance { get; set; }
+        public Client AccountHolder { get; set; }
 
         public void Deposit(double value)
         {
@@ -40,9 +43,9 @@ namespace BankAPII.Domain.Entities
             }
         }
 
-        // public virtual void PrintBalance()
-        // {
-        //     Console.WriteLine($"Saldo da conta de {Holder.Name}: R$ {Balance}");
-        // }
+        public virtual void PrintBalance()
+        {
+            Console.WriteLine($"Saldo da conta de {AccountHolder.Name}: R$ {Balance}");
+        }
     }
 }

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using BankAPII.Domain.Entities;
 
 namespace BankAPII.Domain.Interfaces
-{
-    public interface IClientRepository : IBaseRepository<Client>
     {
+        public interface IAccountRepository : IBaseRepository<BankAccount>
+        {
 
+        }
     }
-}

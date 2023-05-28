@@ -7,7 +7,7 @@ namespace Data
     {
         public string DbPath { get; }
         public DbSet<Client> Clients { get; set; }
-        // public DbSet<BankAccount> Accounts { get; set; }
+        public DbSet<BankAccount> Accounts { get; set; }
 
         public DataContext()
         {
