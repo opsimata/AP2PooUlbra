@@ -37,22 +37,24 @@ namespace BankAPII.Data.Repositories
 
         public IList<Client> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Clients.ToList();
         }
 
         public Client GetById(int entityId)
         {
-            throw new NotImplementedException();
+            return context.Clients.SingleOrDefault(x => x.Id == entityId); // === Select All From *People* Where ID == Parsed ID.
         }
 
         public void Save(Client entity)
         {
-            throw new NotImplementedException();
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Update(Client entity)
         {
-            throw new NotImplementedException();
+            context.Clients.Update(entity);
+            context.SaveChanges();
         }
     }
 }

@@ -6,9 +6,8 @@ namespace Data
     public class DataContext : DbContext
     {
         public string DbPath { get; }
-        // public DbSet<Person> People { get; set; }
-        // public DbSet<Product> Products { get; set; }
-        // public DbSet<City> Cities { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        // public DbSet<BankAccount> Accounts { get; set; }
 
         public DataContext()
         {

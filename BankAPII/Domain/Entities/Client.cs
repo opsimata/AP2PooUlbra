@@ -9,6 +9,6 @@ namespace BankAPII.Domain.Entities
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public BankAccount Account { get; set; }
+        // public BankAccount Account { get; set; }
     }
 }

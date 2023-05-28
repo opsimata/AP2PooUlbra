@@ -45,7 +45,10 @@ namespace BankAPII
             #endregion
 
             // Criação de contas correntes
-            BankAccount conta1 = new BankAccount(client);
+
+            ListClients();
+
+
             // BankAccount conta2 = new BankAccount(cliente2);
 
             // Realização de transações
@@ -53,9 +56,24 @@ namespace BankAPII
             // conta1.Withdraw(5000);
             // conta1.Transfer(conta2, 500);
 
-            // Exibição dos saldos
-            Console.WriteLine($"{client.Name} account balance: ${conta1.Balance}");
+
             // Console.WriteLine($"Saldo da conta de {cliente2.Name}: R$ {conta2.Balance}");
+
+            // Métodos utilitários
+            #region
+
+            // Exibição das informações de cliente e conta
+            void ListClients()
+            {
+                var client = clientRepository.GetAll(); // Get em todas as pessoas salvas no banco
+                Console.WriteLine("\nPeople list:");
+                foreach (var item in client) // Lista as pessoas salvas no banco em print na tela
+                {
+                    Console.WriteLine($"Account holder ID: {item.Id}\nAccount holder Name: ${item.Name}");
+                }
+                Console.Write("\n");
+            }
+            #endregion
         }
     }
 }
